@@ -54,7 +54,7 @@ class ConnectFour
     # upward check
     board.each_with_index do |row, r_index|
       row.each_with_index do |column, c_index|
-        unless r_index <= 2 || c_index >= board[0].length - 3
+        if r_index >= 3 && c_index >= 3
           if (board[r_index][c_index] == board[r_index - 1][c_index - 1]) && (board[r_index - 1][c_index - 1] == board[r_index - 2][c_index - 2]) &&
              (board[r_index - 2][c_index - 2] == board[r_index - 3][c_index - 3]) && board[r_index][c_index] != '_'
             return board[r_index][c_index]
